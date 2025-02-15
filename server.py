@@ -7,7 +7,7 @@ class Server:
     def __init__(self):
         
         self.server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.server_socket.bind(("localhost", 1738))
+        self.server_socket.bind(("0.0.0.0", 1738))
         
         #connected_users[username] = [id, password, client_socket, chatid = none]
         self.connected_users = {}
@@ -28,7 +28,7 @@ class Server:
         
         while True:
             (client_socket, addr) = self.server_socket.accept()
-            
+            print(addr, "connected")
             client_thread = threading.Thread(target=self.handle_client, args=(client_socket, addr), daemon=True)
             client_thread.start()
     
@@ -123,7 +123,6 @@ class Server:
         chatid = str(self.connected_users[username][0] + self.connected_users[dest_user][0])
         self.connected_users[username][3] = chatid
         
-        print(self.connected_users[username])
         return (dest_user, chatid)
         
     def chat(self, username: str, dest_user: str, chatid: str,  client_socket:socket.socket):
