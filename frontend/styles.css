@@ -1,0 +1,55 @@
+body, input{
+  font-family: courier new;
+  font-size: 14px;
+  color: #00ff00;
+  background-color: #000;
+
+}
+.console{
+    
+    border: 1px solid rgb(31, 31, 31);
+    
+    padding: 8px;
+    height: 500px;
+    overflow-y: scroll;
+
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.col_container{
+  display: block;
+}
+
+#console-log{
+  align-items: start;
+}
+
+.input_container{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+.input{
+    background-color: #000;
+    color: #00ff00;
+    font-family: courier new;
+    border: none; 
+
+    align-self: stretch;
+    flex-grow: 1;
+}
+.input:focus{
+    outline: none;
+}
+
+/* Cursor blinker */
+.blink {
+    animation: blinker 1s step-start infinite;
+  }
+  
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
