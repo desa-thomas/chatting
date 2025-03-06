@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+  <head> 
+    <link reL = "stylesheet" href = "../styles/styles.css"> 
+    <script src="../scripts/login_script.js"></script>
+</head> 
+
+  <body>
+    <div class="main-container">
+        <div class="placeholder"></div>
+        <div>
+            <h1>Untitiled Blah Blah</h1>
+        </div>
+
+        <!-- Select Buttons -->
+        <div id = "select-buttons">
+          <button id = "login-button" class = "select-buttons">Log In</button>
+          <button id = "register-button" class = "select-buttons">create Account</button>
+        </div>
+
+        <!-- Login section  -->
+        <div id="login" hidden>
+            <div class="placeholder"></div>
+            <div class= "login-container">
+                
+                    <input type="text"     id="username" value="username" placeholder="Username" class = "login-input" ></input>
+                    <input type="password" id="password" placeholder="password" class = "login-input" ></input>
+                    <button type="submit" id="submit" class = "submit">Login</button>
+                
+            </div>
+            <div style="text-align: center; padding: 10px 10px 10px 10px;"><a onclick="register()">Register</a></div>
+            <div class="placeholder"></div>
+        </div>
+
+        <!-- Register Section -->
+        <div id = "register" hidden>
+
+        </div>
+        <div class="placeholder"></div>
+        <footer>
+            <p style="margin:0px; ">Thomas De Sa 2025  <a href="http://www.github.com/desa-thomas">github</a></p>
+        </footer>
+    </div>
+  </body>
+</html>
