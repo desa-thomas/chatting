@@ -1,120 +1,182 @@
-:root{
-  --greentext: #00ff00; 
-  --backgroundcolor: #000;
+/* Universal styles */
+:root {
+  --greentext: #00ff00;
+  --backgroundcolor: #000000;
   --cickedcolor: #00ff0081;
   --footertextcolor: #ffffff57;
+
+  --arrowcolor: white;
+  --arrowclicked: rgba(255, 255, 255, 0.673);
 }
 
 
-body, input, button{
+body,
+input,
+button {
   font-family: courier new;
   font-size: 14px;
   color: var(--greentext);
   background-color: var(--backgroundcolor);
+
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+  height:95vh; 
+}
+
+a {
+  color: rgba(206, 0, 206, 0.76);
+}
+
+a:active {
+  color: rgba(206, 0, 206, 0.559);
+  ;
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+  align-self: stretch;
+  align-items: center;
+  gap: 15px;
+}
+
+.title{
+  margin: 0px; 
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.logout{
   
-}
-body{height:100%;}
-.console{
-    
-    border: 1px solid rgb(31, 31, 31);
-    
-    padding: 8px;
-    height: 500px;
-    overflow-y: scroll;
-
-    display: flex;
-    flex-direction: column-reverse;
+  background-color: black;
+  color: var(--greentext);
+  font-size: 16px;
+  font-weight: 1000;
+  border-radius: 10px;
 }
 
-.col_container{
+/* Index (i.e., main page) */
+.console {
+  border: 1px solid rgb(31, 31, 31);
+
+  padding: 8px;
+  height: 500px;
+  overflow-y: scroll;
+
+  display: flex;
+  align-self: stretch;
+  flex-direction: column-reverse;
+
+}
+
+.col_container {
   display: block;
 }
 
-#console-log{
+#console-log {
   align-items: start;
 }
 
-.input_container{
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-}
-.input{
-    border: none; 
-    align-self: stretch;
-    flex-grow: 1;
-}
-input:focus{
-    outline: none;
+.input_container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
 }
 
-footer{
-  color: var(--footertextcolor); 
-  padding: 50px 10px 10px 10px; 
+.input {
+  border: none;
+  align-self: stretch;
+  flex-grow: 1;
 }
 
-a{
-  color: rgba(206, 0, 206, 0.76);
+input:focus {
+  outline: none;
 }
-a:active{
-  color: rgba(206, 0, 206, 0.559);;
+
+footer {
+  color: var(--footertextcolor);
+  padding: 50px 10px 10px 10px;
+  align-self: center;
 }
-/* Cursor blinker
-.blink {
-    animation: blinker 1s step-start infinite;
-  }
-  
-  @keyframes blinker {
-    50% {
-      opacity: 0;
-    }
-  } */
 
+/* LOGIN PAGE*/
 
-  /* LOGIN PAGE*/
+.main-container {
+  display: flex;
+  flex-direction: column;
+  height: 95vh;
+  width: 100vw;
+  align-items: center;
 
-  .main-container{
-    display: flex;
-    flex-direction: column;
-    height: 95vh;
-    width:100vw;
-    align-items: center;
-  }
-  .placeholder{
-    flex-grow: 1;
-  }
-  .login-container{
-    align-self: center;
+  padding: 10px 10px 10px 10px; 
+}
 
-  }
-  .login-input button{
-    border-width: 1px;
-  }
+.placeholder {
+  flex-grow: 2;
+}
 
-  .select-buttons{
-    font-size: 18px; 
+.login-input button {
+  border-width: 1px;
+}
+
+.select-buttons {
+  font-size: 18px;
+}
+
+.submit:active {
+  color: var(--cickedcolor);
+}
+
+@keyframes shake {
+  0% {
+    margin-left: 0rem;
   }
 
-  .submit:active{
-    color: var(--cickedcolor); 
+  25% {
+    margin-left: 0.5rem;
   }
 
-  @keyframes shake {
-    0% {
-      margin-left: 0rem;
-    }
-    25% {
-      margin-left: 0.5rem;
-    }
-    75% {
-      margin-left: -0.5rem;
-    }
-    100% {
-      margin-left: 0rem;
-    }
+  75% {
+    margin-left: -0.5rem;
   }
 
-  .shakeclass:focus{
-    animation: shake 0.2s ease-in-out 0s 2;
-    box-shadow: 0 0 0.6rem #ff000077;
+  100% {
+    margin-left: 0rem;
   }
+}
+
+.shakeclass:focus {
+  animation: shake 0.2s ease-in-out 0s 2;
+  /* box-shadow: 0 0 0.6rem #ff000077; */
+}
+
+svg {
+  vertical-align: bottom
+}
+
+.backbutton {
+  border: none;
+}
+
+.clicked {
+  stroke: var(--arrowclicked);
+}
+
+.error {
+
+  padding-top: 25px;
+  color: rgb(255, 0, 0)
+}
+
+.login-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.remember{
+  accent-color: var(--greentext);
+}

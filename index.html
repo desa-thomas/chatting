@@ -1,22 +1,46 @@
 <!DOCTYPE html>
-    <head>
-        <link rel="stylesheet" href="frontend/styles/styles.css">
-        <script src="frontend/scripts/index_script.js"></script>
-    </head>
-  <h1></h1>
+<head>
+  <link rel="stylesheet" href="frontend/styles/styles.css" />
+  <script src="frontend/scripts/index_script.js"></script>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+</head>
 
-    <!-- Reverse container -->
-    <div id = "console" class="console">
+<body>
+  <!-- Main section -->
+  <div class="main-container">
 
-        <div class="input_container"> 
-            <span id="username">user></span> <input id = "input" class="input">
-        </div>
+    <!-- Header -->
+    <div class="row">
+        <h1 class="title">Untitiled Blah Blah</h1>
+        <div class="placeholder"></div>
 
-        <div id="console-log" class="col_container">
-            <div>Console Chat [Version 0.0.1]</div>
-            <div>(c) Fake Corporation. No rights reserved.<br></div>
-            <br>
-        </div>
-        
+        <h3 id="header-username"></h3>
+        <button class="logout" id = "logout">Log Out</button>
     </div>
-</html>
+
+    <!-- Console Reverse container -->
+    <div id="console" class="console">
+      <div class="input_container">
+        <span id="username">user></span> <input id="input" class="input" />
+      </div>
+
+      <div id="console-log" class="col_container">
+        <div>Console Chat [Version 0.0.1]</div>
+        <div>(c) Fake Corporation. No rights reserved.<br /></div>
+        <br />
+      </div>
+    </div>
+    <div class="placeholder"></div>
+    <footer>
+      <p style="margin: 0px">
+        Thomas De Sa 2025 <a href="http://www.github.com/desa-thomas">github</a>
+      </p>
+    </footer>
+  </div>
+
+
+</body>

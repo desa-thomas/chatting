@@ -1,44 +1,140 @@
 <!DOCTYPE html>
-  <head> 
-    <link reL = "stylesheet" href = "../styles/styles.css"> 
-    <script src="../scripts/login_script.js"></script>
-</head> 
+<head>
+  <link rel="stylesheet" href="../styles/styles.css" />
 
-  <body>
-    <div class="main-container">
-        <div class="placeholder"></div>
-        <div>
-            <h1>Untitiled Blah Blah</h1>
-        </div>
+  <script src="../scripts/login_script.js"></script>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+</head>
 
-        <!-- Select Buttons -->
-        <div id = "select-buttons">
-          <button id = "login-button" class = "select-buttons">Log In</button>
-          <button id = "register-button" class = "select-buttons">create Account</button>
-        </div>
-
-        <!-- Login section  -->
-        <div id="login" hidden>
-            <div class="placeholder"></div>
-            <div class= "login-container">
-                
-                    <input type="text"     id="username" value="username" placeholder="Username" class = "login-input" ></input>
-                    <input type="password" id="password" placeholder="password" class = "login-input" ></input>
-                    <button type="submit" id="submit" class = "submit">Login</button>
-                
-            </div>
-            <div style="text-align: center; padding: 10px 10px 10px 10px;"><a onclick="register()">Register</a></div>
-            <div class="placeholder"></div>
-        </div>
-
-        <!-- Register Section -->
-        <div id = "register" hidden>
-
-        </div>
-        <div class="placeholder"></div>
-        <footer>
-            <p style="margin:0px; ">Thomas De Sa 2025  <a href="http://www.github.com/desa-thomas">github</a></p>
-        </footer>
+<body>
+  <div class="main-container">
+    <div class="placeholder"></div>
+    <div>
+      <h1>Untitiled Blah Blah</h1>
     </div>
-  </body>
-</html>
+
+    <!-- Select Buttons -->
+    <div id="select-buttons">
+      <button id="login-button" class="select-buttons">Log In</button>
+      <button id="register-button" class="select-buttons">
+        create Account
+      </button>
+    </div>
+
+    <!-- Login section  -->
+    <div id="login" hidden>
+      <div class="login-section">
+        <div class="row">
+          <button id="backbutton1" class="backbutton">
+            <svg
+              width="25"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                id="backarrow"
+                d="M20 12H4M10 18L4 12L10 6"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+          <input
+            type="text"
+            id="username"
+            placeholder="Username"
+            class="login-input"
+          />
+          <input
+            type="password"
+            id="password"
+            placeholder="password"
+            class="login-input"
+          />
+          <button type="submit" id="submit" class="submit">Login</button>
+        </div>
+
+        <div
+          class="row"
+          style="align-self: center; gap: 5px"
+          id="login-remember-div"
+        >
+          <input type="checkbox" id="login-remember" class="remember" checked=true/>
+          <p>Remember me</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Register Section -->
+    <div id="register" hidden>
+      <div class="login-section">
+        <div class="row">
+          <button id="backbutton2" class="backbutton">
+            <svg
+              width="25"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                id="backarrow"
+                d="M20 12H4M10 18L4 12L10 6"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+          <input
+            type="text"
+            id="register-username"
+            placeholder="Create Username"
+            class="login-input"
+          />
+          <input
+            type="password"
+            id="register-password"
+            placeholder="Create Password"
+            class="login-input"
+          />
+          <input
+            type="password"
+            id="check-password"
+            placeholder="Retype Password"
+            class="login-input"
+          />
+          <button type="submit" id="register-submit" class="submit">
+            Create Account
+          </button>
+        </div>
+
+        <div
+          class="row"
+          style="align-self: center; gap: 5px"
+          id="regi-remember-div"
+        >
+          <input type="checkbox" id="register-remember" class="remember" checked=true/>
+          <p>Remember me</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="error" class="error" hidden></div>
+    <div class="placeholder"></div>
+    <footer>
+      <p style="margin: 0px">
+        Thomas De Sa 2025 <a href="http://www.github.com/desa-thomas">github</a>
+      </p>
+    </footer>
+  </div>
+</body>

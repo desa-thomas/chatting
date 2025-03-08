@@ -5,13 +5,20 @@
 const url = "localhost";
 const port = 1738;
 let socket;
+let username
 
 /**If user is not logged in, send them to login page */
-let username = sessionStorage.getItem("username")
-console.log(username)
-if (!username){
-  console.log("here")
+
+if (sessionStorage.length == 0 && localStorage.length == 0){
   location.href = "frontend/pages/login.html"
+}
+else{
+  username = sessionStorage.getItem("username")
+
+  if (!username){
+    username = localStorage.getItem("username")
+  }
+
 }
 
 /*When page is loaded -> initialize variables */
@@ -21,10 +28,13 @@ onload = function () {
   input_field.focus();
 
   this.document.getElementById("username").innerHTML = `${username}>`
+  this.document.getElementById("header-username").innerHTML = username
 
   document.getElementById("console").onclick = function (e) {
     input_field.focus();
   };
+
+  this.document.getElementById("logout").onclick = logout
 
   // Event listener for "Enterkey" on input
   input_field.addEventListener("keypress", function (event) {
@@ -97,3 +107,20 @@ function log_msg(msg) {
  * send message to server
  */
 function sendmessage() {}
+
+
+/**
+ * Logout button function
+ */
+
+function logout(){
+  /**clear session & local storage */
+  for (key of Object.keys(sessionStorage)){
+    sessionStorage.removeItem(key)
+  }
+  for(key of Object.keys(localStorage)){
+    localStorage.removeItem(key)
+  }
+
+  location.href = "frontend/pages/login.html"
+}
