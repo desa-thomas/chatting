@@ -6,6 +6,7 @@ const url = "localhost";
 const port = 1738;
 let socket;
 let username
+let input_field
 
 /**If user is not logged in, send them to login page */
 
@@ -23,7 +24,7 @@ else{
 
 /*When page is loaded -> initialize variables */
 onload = function () {
-  let input_field = document.getElementById("input");
+  input_field = document.getElementById("input");
   input_field.value = "";
   input_field.focus();
 
