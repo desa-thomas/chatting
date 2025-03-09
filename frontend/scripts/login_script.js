@@ -142,7 +142,7 @@ function validateRegister() {
 
   else if(containsWhitespace(username) || username.includes("-")){
     shake("register-username")
-    err_msg("Invalid username")
+    err_msg("Invalid username (no spaces or -)")
     return
   }
 
@@ -165,6 +165,11 @@ function validateRegister() {
     shake("register-username")
     err_msg("Password must be long than 8 characters")
     return
+  }
+
+  else if(username.length >25){
+    shake("register-username")
+    err_msg("Username too long")
   }
 
 
